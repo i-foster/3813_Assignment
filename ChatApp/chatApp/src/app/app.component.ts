@@ -11,6 +11,6 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'chatApp';
   Hello(){
-    
+    console.log("app working")
   }
 }
