@@ -21,8 +21,7 @@ export class LoginComponent {
     pword:''
   }
 
-  formsubmit(){
-    
-  }
+  formsubmit(){}
   
-}
+  
+  
