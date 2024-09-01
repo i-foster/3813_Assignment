@@ -14,12 +14,21 @@ export class HomeComponent {
   }
 
   elementClicked:string = "";
-  usergroups = ["groupone", "gorup1", "group3"];
+  usergroups = ["group1", "group2", "group3"];
 
 
   groupselect(itemclicked:any){
     this.elementClicked =  itemclicked.target.innerHTML;
-    //this.router.navigateByUrl("/channel" + this.elementClicked)
-    console.log("/channel" + this.elementClicked)
+    this.localstore.saveData("group",this.elementClicked)
+    this.router.navigateByUrl("channels")
   }
+
+
+  home(){
+    this.router.navigateByUrl("home");
+  }
+  profile(){
+    this.router.navigateByUrl("profile")
+  }
+
 }

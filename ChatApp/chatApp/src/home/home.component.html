@@ -8,11 +8,18 @@
 <body>
     hello
     
+    <div>
+        <ul (click)="groupselect($event)">
+            <li *ngFor="let groups of usergroups; index as i">
+                {{usergroups[i]}}
+            </li>
+        </ul>
+    </div>
 
-    <ul (click)="groupselect($event)">
-    <li *ngFor="let items of usergroups; index as i">
-        {{usergroups[i]}}
-    </li>
-    </ul>
+    <div id="bottom bar"></div>
+    <div style="margin-left: 0%; padding-left: 0%;  width: 100%; position: absolute; bottom: 0; left: 0;">
+        <button (click)="home()" id="home" style="width: 50%; height: 5em; ">Groups</button>
+        <button (click)="profile()" id="prfile" style="width: 50%; height: 5em; ">Profile</button>
+    </div>
 </body>
 </html>
