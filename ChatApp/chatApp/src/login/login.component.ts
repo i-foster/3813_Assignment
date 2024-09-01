@@ -21,7 +21,7 @@ export class LoginComponent {
     pword:''
   }
 
-  formsubmit(){}
-  
-  
-  
+  formsubmit(){
+  this.router.navigateByUrl("/home")
+  }
+}
