@@ -30,9 +30,7 @@ export class HomeComponent {
     }else{
       let currentuser:any = localStorage.getItem("cuser")
       currentuser = JSON.parse(currentuser)
-      console.log(currentuser.username)
       this.username = currentuser.username;
-      console.log(this.username)
     }
   }
 

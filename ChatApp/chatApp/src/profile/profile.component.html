@@ -1,1 +1,40 @@
-<p>profile works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="UserDetails">
+
+        <form action="GET">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" [(ngModel)]="currentUser.username" value="{{currentUser.username}}"><br>
+            
+            <label for="birthdate">Birthdate:</label>
+            <input type="text" id="birthdate" name="birthdate" [(ngModel)]="currentUser.birthdate" value="{{currentUser.birthdate}}"><br>
+            
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" [(ngModel)]="currentUser.email" value="{{currentUser.email}}"><br>
+            
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" [(ngModel)]="currentUser.password" value="{{currentUser.password}}"><br>
+            
+            <label for="level">Rank</label>
+            <input type="text" id="level" name="level" value="{{currentUser.level}}"><br>
+
+        </form>
+        <button (click)="saveData()">Save</button>
+        <div><button *ngIf="userStat == true" (click)="createUser()">Create New User   
+        </button></div>
+    </div>
+
+
+    <div id="bottombar">
+        <button (click)="home()" id="home" >Groups</button>
+        <button (click)="profile()" id="profile" >Profile</button>
+    </div>
+</body>
+</html>

@@ -38,6 +38,14 @@ export class LoginComponent {
     "valid":false,
     "level":"group"
 },
+{"username":"super",
+  "birthdate":"1/01/2000",
+  "age":28,
+  "email":"z@com",
+  "password":"k",
+  "valid":false,
+  "level":"super"
+},
 {"username":"newuser",
   "birthdate":"1/01/2000",
   "age":24,
@@ -59,6 +67,7 @@ export class LoginComponent {
     let users:user[] = [
       {username:"izaiah",password:"i"},
       {username:"kaile",password:"k"},
+      {username:"super",password:"123"},
       {username:"newuser",password:"n"} 
     ];
 
