@@ -11,22 +11,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './channels.component.css'
 })
 export class ChannelsComponent {
-  constructor(private router:Router, private localstore:LogonService){ 
-
-  }
-
+  constructor(private router:Router, private localstore:LogonService){ }
 
   ngOnInit():void {
     this.Currentgroup()}
 
-  channels =[""];
-  /*group1 = ["welcome", "introduce yourself", "current Happenings"];
-  group2 = ["admin", "Complaints", "Suggestions"];
-  group3 = ["Movies", "TV", "Books", "Music"];
-  group4 = ["Music", "welcome"];
-  groups = []
-  groupNames = ["group1","group2"]*/
-  
+  channels =[""];  
 
  Currentgroup(){
   type groupsModel = {
@@ -37,6 +27,8 @@ export class ChannelsComponent {
   let groups:groupsModel[] = [
     {groupName:"group1", groupChannels:["welcome", "introduce yourself", "current Happenings"]},
     {groupName:"group2", groupChannels:["admin", "Complaints", "Suggestions"]},
+    {groupName:"group3", groupChannels:["Movies", "TV", "Books", "Music"]},
+    {groupName:"group4", groupChannels:["Music", "welcome"]},
   ]
   
   if(localStorage.getItem("group") == null){
@@ -47,8 +39,6 @@ export class ChannelsComponent {
     let cleanString: string = selectedGroup.trim().replace(/\s+/g, "");
     selectedGroup = cleanString;    
     for (let i = 0; i < groups.length; i++){
-
-      console.log(groups[i])
       if(selectedGroup == groups[i].groupName){
       this.channels = groups[i].groupChannels
   }}
