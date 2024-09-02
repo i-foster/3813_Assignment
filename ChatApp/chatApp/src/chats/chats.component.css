@@ -4,6 +4,9 @@ ul{
     background-color: grey;
     color: grey;
 }
+li{
+    background-color: red;
+}
 
 #messagearea{ 
     background-color: grey;
@@ -31,13 +34,12 @@ ul{
     background-color: lemonchiffon;    
     text-align: left;
 }
-html{
+body {
     background-color: grey;
 }
 #test{
     position: absolute;
     bottom: 100px;
-    
 }
 h2{
     text-align: center;

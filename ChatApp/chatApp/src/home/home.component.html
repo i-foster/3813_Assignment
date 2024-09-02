@@ -6,9 +6,9 @@
     <title>Home</title>
 </head>
 <body>
-    hello
+    <h2>Welcome {{username}}</h2>
     
-    <div>
+    <div id="div1">
         <ul (click)="groupselect($event)">
             <li *ngFor="let groups of usergroups; index as i">
                 {{usergroups[i]}}

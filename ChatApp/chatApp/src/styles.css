@@ -17,3 +17,9 @@ left: 0;}
 #profile{
     width: 50%; height: 5em; 
 }
+
+html, body{
+    padding: 0%;
+    margin: 0%;
+}
+

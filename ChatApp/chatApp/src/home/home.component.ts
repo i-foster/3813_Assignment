@@ -16,7 +16,7 @@ export class HomeComponent {
   elementClicked:string = "";
   usergroups = ["group1", "group2", "group3"];
 
-
+  username:string = "izaiah";
   groupselect(itemclicked:any){
     this.elementClicked =  itemclicked.target.innerHTML;
     this.localstore.saveData("group",this.elementClicked)
