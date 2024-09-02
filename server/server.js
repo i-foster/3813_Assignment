@@ -3,9 +3,6 @@ const { request } = require('http');
 var cors = require('cors')
 var app = express();
 
-const path = require('path');
-const http = require('http').Server(app);
-const bodyParer = require('body-parser');
 
 
 
