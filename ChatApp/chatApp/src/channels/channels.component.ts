@@ -45,7 +45,12 @@ export class ChannelsComponent {
 }
 
   }
-  channelselect(a:any){
+  elementClicked:string = "";
+  channelselect(itemclicked:any){
+    this.elementClicked =  itemclicked.target.innerHTML;
+    this.localstore.saveData("channel",this.elementClicked)
+    this.router.navigateByUrl("chats")
+
 
   }
   home(){
