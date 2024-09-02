@@ -1,0 +1,44 @@
+
+ul{
+    list-style: none;
+    background-color: grey;
+    color: grey;
+}
+
+#messagearea{ 
+    background-color: grey;
+}
+.mright{ 
+    clear: right; 
+    float: right; 
+    text-align: left;
+    margin: 1em;
+    position: relative;
+    width: 8em;
+    height: auto;
+    background-color: lemonchiffon;    
+    text-align: right;
+}
+
+.mleft{ 
+    float: left; 
+    clear: left; 
+    text-align: left;
+    margin: 1em;
+    position: relative;
+    width: 8em;
+    height: auto;
+    background-color: lemonchiffon;    
+    text-align: left;
+}
+html{
+    background-color: grey;
+}
+#test{
+    position: absolute;
+    bottom: 100px;
+    
+}
+h2{
+    text-align: center;
+}

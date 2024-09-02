@@ -1,1 +1,28 @@
-<p>chats works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+
+    <div ><span id="messagearea">
+        <h2>{{displayName}}</h2>
+        <ul>
+            <li *ngFor="let messages of chats; index as i">
+                <div *ngIf="i%2 == 1" class="mright" >{{chats[i]}}</div>
+                <div *ngIf="i%2 == 0" class="mleft" >{{chats[i]}}</div>
+            </li>
+        </ul>
+    </span></div>
+
+    <button (click)="newMessage()" id="test">New message</button>
+
+    <div id="bottombar">
+        <button (click)="home()" id="home" >Groups</button>
+        <button (click)="profile()" id="profile" >Profile</button>
+    </div>
+    
+</body>
+</html>

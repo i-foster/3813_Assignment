@@ -25,10 +25,10 @@ export class ChannelsComponent {
   };
   
   let groups:groupsModel[] = [
-    {groupName:"group1", groupChannels:["welcome", "introduce yourself", "current Happenings"]},
-    {groupName:"group2", groupChannels:["admin", "Complaints", "Suggestions"]},
+    {groupName:"group1", groupChannels:["Welcome", "Introduce Yourself", "Current Happenings"]},
+    {groupName:"group2", groupChannels:["Admin", "Complaints", "Suggestions"]},
     {groupName:"group3", groupChannels:["Movies", "TV", "Books", "Music"]},
-    {groupName:"group4", groupChannels:["Music", "welcome"]},
+    {groupName:"group4", groupChannels:["Music", "Welcome"]},
   ]
   
   if(localStorage.getItem("group") == null){
@@ -45,17 +45,18 @@ export class ChannelsComponent {
 }
 
   }
+
   elementClicked:string = "";
   channelselect(itemclicked:any){
     this.elementClicked =  itemclicked.target.innerHTML;
     this.localstore.saveData("channel",this.elementClicked)
     this.router.navigateByUrl("chats")
-
-
   }
+
   home(){
     this.router.navigateByUrl("home");
   }
+  
   profile(){
     this.router.navigateByUrl("profile")
   }
