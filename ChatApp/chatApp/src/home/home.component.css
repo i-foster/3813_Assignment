@@ -1,5 +1,4 @@
 li{
-
     list-style: none;
     margin: 1em;
     margin-left: auto;
@@ -8,18 +7,27 @@ li{
     text-justify: center;
     padding-top: 5px;
     padding-bottom: 5px;
+    color: #86CB92;
+    text-decoration: solid;
+    font-size: x-large;
+    text-transform: capitalize;
+    border-radius: 9px;
 }
 
+
 h2{
-    padding-top: 0; 
+    padding-top: 1em; 
     margin: 0%;
     text-align: center;
+    text-transform: uppercase;
+    color: #260F26;
+    text-decoration: underline;
 }
 
 html{
     padding: 0%;
     margin: 0%;
     height: 100vh;
-    background-color: lightgreen;
+    background-color: #71B48D;
 
 }

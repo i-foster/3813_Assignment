@@ -6,3 +6,10 @@ Colours used:
 #404E7C
 #251F47
 #260F26
+
+
+Data structures: 
+
+Angular components:
+
+GIT:
