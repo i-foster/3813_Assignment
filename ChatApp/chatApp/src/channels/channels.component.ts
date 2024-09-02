@@ -54,7 +54,7 @@ export class ChannelsComponent {
 
   }
   home(){
-    //this.router.navigateByUrl("home");
+    this.router.navigateByUrl("home");
   }
   profile(){
     this.router.navigateByUrl("profile")
