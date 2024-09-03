@@ -2,25 +2,39 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LogonService } from '../app/services/logon.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-channels',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './channels.component.html',
   styleUrl: './channels.component.css'
 })
 export class ChannelsComponent {
   constructor(private router:Router, private localstore:LogonService){ }
 
-  ngOnInit():void {
-    this.Currentgroup()}
 
+  admin = false;
   channels =[""];  
   currentGroupDetails = {
     name:"",
     owner:""
   }
+  cuser={"username":"",
+    "id":"",
+    "birthdate":"",
+    "age":0,
+    "email":"",
+    "password":"",
+    "valid":false,
+    "level":""
+};
+nChannel:string="+" 
+
+ngOnInit():void {
+  this.adminstat()
+  this.Currentgroup()}
 
  Currentgroup(){
   type groupsModel = {
@@ -50,6 +64,14 @@ export class ChannelsComponent {
 
   }
 
+  adminstat(){
+    let user:any = localStorage.getItem("cuser")
+    this.cuser = JSON.parse(user);
+    if(this.cuser.level == "super" || this.cuser.level == "group"){
+      this.admin = true;
+    }
+  }
+
   elementClicked:string = "";
   channelselect(itemclicked:any){
     this.elementClicked =  itemclicked.target.innerHTML;
@@ -57,12 +79,20 @@ export class ChannelsComponent {
     this.router.navigateByUrl("chats")
   }
 
+  createChannel(){
+    if(this.nChannel != "+")
+    this.channels.push(this.nChannel)
+  }
+
   home(){
-    this.router.navigateByUrl("home");
+    //this.router.navigateByUrl("home");
+    console.log(this.admin)
   }
   
   profile(){
     this.router.navigateByUrl("profile")
   }
+
+
 
 }

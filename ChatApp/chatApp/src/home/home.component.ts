@@ -21,7 +21,6 @@ export class HomeComponent {
   elementClicked:string = "";
   usergroups = [{name:"group1", owner:"super"},{name:"group2", owner:"izaiah"},{name:"group3", owner:"izaiah"}];
   newgroup = {name:"",owner:""};
-
   username:string = "";
 
   cuser={"username":"",
@@ -65,7 +64,6 @@ export class HomeComponent {
     if(this.cuser.level == "super" || this.cuser.level == "group"){
       this.admin = true;
     }
-
   }
 
   createGroup(){
@@ -76,8 +74,6 @@ export class HomeComponent {
       this.usergroups.push(this.newgroup);
       console.log(this.usergroups)
     }
-    
-    
   }
 
   home(){
@@ -91,7 +87,4 @@ export class HomeComponent {
     let cleanString: string = x.trim().replace(/\s+/g, "");
     return cleanString;
   }
-
-
-
 }

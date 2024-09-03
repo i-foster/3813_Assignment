@@ -14,7 +14,14 @@
                 {{channels}}
             </li>
         </ul>
+        <div *ngIf="admin == true">
+            <form>
+                <label for="nChanlle">New Group Name:</label>
+                <input type="text" [(ngModel)]="nChannel" name="nChanlle"><br>
+            </form><button (click)="createChannel()">New Channel</button>
     </div>
+</div>
+
     <div id="bottombar">
         <button (click)="home()" id="home" >Groups</button>
         <button (click)="profile()" id="profile" >Profile</button>
