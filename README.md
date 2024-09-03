@@ -41,7 +41,7 @@ Chats are user-generated content of string typing. Currently, only example chats
 This app is using the Angular framework. Here is a detailed breakdown of each component and service:
 
 #### Services
-- **Logon Service**: Used to access local storage with methods for getting, setting, and clearing values.
+- `Logon Service`: Used to access local storage with methods for getting, setting, and clearing values.
 
 #### Components
 - `Logon`: Acts as a splash page for the app where users are authenticated and redirected if they sign out.
