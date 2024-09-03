@@ -8,7 +8,7 @@
 <body>
     <h2>Welcome {{username}}</h2>
     
-    <div id="div1">
+    <div *ngIf="delete == false" id="div1">
         <ul (click)="groupselect($event)">
             <li *ngFor="let groups of usergroups; index as i">
                 {{usergroups[i].name}}
@@ -23,6 +23,17 @@
         </div>
     </div>
 
+    <div *ngIf="delete == true" id="div2">
+        <ul (click)="deleteGroups($event)">
+            <li *ngFor="let groups of usergroups; index as i">
+                {{usergroups[i].name}}
+            </li>
+        </ul>
+    </div>
+
+    <div id="deletebutton">
+        <button (click)="EngageDelete()">Edit Groups</button>
+    </div>
     <div id="bottombar">
         <button *ngIf="admin == false" (click)="home()" id="home">Groups </button>
         <button *ngIf="admin == true" (click)="createGroup()" id="home">New Group</button>

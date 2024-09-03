@@ -11,7 +11,7 @@ Colours Palete:
 Data structures: 
 Data structures for all major items in this app
 
-Users: Users are structured with the following data storage design.: any items with a star are not editable by a user. users are stored in a object or array of objects and are of mixed typing.
+Users: Users are structured with the following data storage design.: any items with a star are not editable by a user. Users are stored in a object or array of objects and are of mixed typing.
     username: string.
     * id: unique user number/integar.
     birthdate: data stored as a string.
@@ -26,6 +26,7 @@ Groups are structured with the following data points of: Groups are stored in a 
     name: the name of the group 
     owner: the owner of the group
     channels: channels within the group stored as a array of strings.
+    users: array of strings of all users who can be in the group.
 
 Channels: 
 Channels store their own name and the chat messages currently this will be changed to the channel name and the location of those stored messages.

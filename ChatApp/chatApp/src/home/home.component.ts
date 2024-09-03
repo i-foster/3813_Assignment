@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { LogonService } from '../app/services/logon.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { group } from '@angular/animations';
 
 
 @Component({
@@ -18,8 +17,18 @@ export class HomeComponent {
   }
 
   admin = false;
+  delete = false;
   elementClicked:string = "";
-  usergroups = [{name:"group1", owner:"super"},{name:"group2", owner:"izaiah"},{name:"group3", owner:"izaiah"}];
+  deleteClicked:string = "";
+  newG = [
+    {name:"",
+    owner:""
+    }];
+  usergroups = [
+    {name:"group1", owner:"super"},
+    {name:"group2", owner:"izaiah"},
+    {name:"group3", owner:"izaiah"}
+  ];
   newgroup = {name:"",owner:""};
   username:string = "";
 
@@ -87,4 +96,26 @@ export class HomeComponent {
     let cleanString: string = x.trim().replace(/\s+/g, "");
     return cleanString;
   }
-}
+
+  EngageDelete(){
+    if(this.delete == false ){
+    this.delete = true;}
+    else{this.delete = false}
+  }
+
+  deleteGroups(itemclicked:any){
+    //this currently does not work due to the design of hard coded values will work with the implementation of MongoDB
+    this.deleteClicked =  itemclicked.target.innerHTML;
+    /*for(let i=0; i < this.usergroups.length; i++){
+      this.deleteClicked = this.stringCleaner(this.deleteClicked)
+      if(this.deleteClicked == this.usergroups[i].name){
+        for(let j = 0; j <= this.usergroups.length; j++){
+          if(j != i){
+          this.newG.push(this.usergroups[j])
+          } 
+        }
+      }
+    }
+    this.usergroups = this.newG;
+    */}
+  }
