@@ -1,53 +1,58 @@
 # 3813_Assignment
-3813 software frameworks assignment repository
-Colours Palete: 
-#86CB92
-#71B48D
-#404E7C
-#251F47
-#260F26
 
+## 3813 Software Frameworks Assignment Repository
 
-Data structures: 
-Data structures for all major items in this app
+### Colors Palette
+- `#86CB92`
+- `#71B48D`
+- `#404E7C`
+- `#251F47`
+- `#260F26`
 
-Users: Users are structured with the following data storage design.: any items with a star are not editable by a user. Users are stored in a object or array of objects and are of mixed typing.
-    username: string.
-    * id: unique user number/integar.
-    birthdate: data stored as a string.
-    age:27, user age stored as a number/integar.
-    email:"i@com", user email stored as a string.
-    password: string of the users password.
-    * valid: to ensure a user is still current.
-    * level: current rank or level of a user, can be a user , group admin or a super admin.
+### Data Structures
 
-Groups:\
-Groups are structured with the following data points of: Groups are stored in a object or array of objects and  with each point being stored as a string.\
-    name: the name of the group. \
-    owner: the owner of the group. \
-    channels: channels within the group stored as a array of strings. \
-    users: array of strings of all users who can be in the group. \
+#### Users
+Users are structured with the following data storage design. Items with a star are not editable by a user. Users are stored in an object or array of objects and are of mixed typing.
+- `username`: string
+- *`id`*: unique user number/integer
+- `birthdate`: data stored as a string
+- `age`: number/integer (e.g., 27)
+- `email`: string (e.g., "i@com")
+- `password`: string (the user's password)
+- *`valid`*: ensures the user is still current
+- *`level`*: current rank or level of a user, which can be "user", "group admin", or "super admin"
 
-Channels:\
-Channels store their own name and the chat messages currently this will be changed to the channel name and the location of those stored messages.\
+#### Groups
+Groups are structured with the following data points. Groups are stored in an object or array of objects, with each point being stored as a string.
+- `name`: the name of the group
+- `owner`: the owner of the group
+- `channels`: array of strings representing channels within the group
+- `users`: array of strings of all users who can be in the group
 
-Chats:\
-Chats are user generated content of string typing, currently only example chats are hardcoded into a array of strings, however when MongoDB is added they will have the following data structure.\
-    Chatcontent: The chat messages.\
-    Owner: the user that sent the message.\
+#### Channels
+Channels store their own name and chat messages. Currently, this will be changed to include the channel name and the location of the stored messages.
 
+#### Chats
+Chats are user-generated content of string typing. Currently, only example chats are hardcoded into an array of strings. When MongoDB is added, they will have the following data structure:
+- `ChatContent`: the chat messages
+- `Owner`: the user who sent the message
 
-Angular Design:
+### Angular Design
+This app is using the Angular framework. Here is a detailed breakdown of each component and service:
 
+#### Services
+- **Logon Service**: Used to access local storage with methods for getting, setting, and clearing values.
 
-GIT:
-Git was used to regularly backup and commit new work, with merge having to be manually approved. and branches used after first working version for CSS and small changes allowing a rollback incase of failure. My git repository mirrors a Angular project with some minor adjustments. This is to allow easy understanding there is also the addition of the server folder currently with a package.json and server.js file.
-    minor adjustments:
-    gitignore being use for the node modules.
-    images folder containing early drafts of wireframes and data structures. 
+#### Components
+- **Logon**: Acts as a splash page for the app where users are authenticated and redirected if they sign out.
+- **Home**: The default page for a signed-in user. It provides access to each group the user can see and their profile. If the user is a group admin or super admin, this is where they can create new groups.
+- **Channels**: Displays channels for the group the user is currently in. If the user is a group admin or super admin, this is where they can create new channels.
+- **Profile**: Displays all user details. All users can sign out from this page. It is also where super admins can create new user accounts.
 
+### GIT
+Git was used to regularly back up and commit new work. Merges had to be manually approved, and branches were used after the first working version for CSS and small changes, allowing a rollback in case of failure. My Git repository mirrors an Angular project with some minor adjustments:
+- `.gitignore` used for node modules
+- `images` folder containing early drafts of wireframes and data structures
 
-
-Server Side:
-
-Everything is handled client side currently as their is no database authentication or editting this will be implemented in A2.
+### Server Side
+Everything is handled client-side currently, as there is no database authentication or editing. This will be implemented in A2.
