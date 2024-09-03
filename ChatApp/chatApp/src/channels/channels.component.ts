@@ -86,8 +86,7 @@ ngOnInit():void {
   }
 
   home(){
-    //this.router.navigateByUrl("home");
-    console.log(this.admin)
+    this.router.navigateByUrl("home");
   }
   
   profile(){
