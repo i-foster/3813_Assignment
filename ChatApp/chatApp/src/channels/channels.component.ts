@@ -17,6 +17,10 @@ export class ChannelsComponent {
     this.Currentgroup()}
 
   channels =[""];  
+  currentGroupDetails = {
+    name:"",
+    owner:""
+  }
 
  Currentgroup(){
   type groupsModel = {
@@ -34,12 +38,12 @@ export class ChannelsComponent {
   if(localStorage.getItem("group") == null){
       this.router.navigateByUrl("home");
   }else {
-
     let selectedGroup:any = localStorage.getItem("group");
+    this.currentGroupDetails = JSON.parse(selectedGroup)
     let cleanString: string = selectedGroup.trim().replace(/\s+/g, "");
     selectedGroup = cleanString;    
     for (let i = 0; i < groups.length; i++){
-      if(selectedGroup == groups[i].groupName){
+      if(this.currentGroupDetails.name == groups[i].groupName){
       this.channels = groups[i].groupChannels
   }}
 }

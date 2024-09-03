@@ -11,13 +11,21 @@
     <div id="div1">
         <ul (click)="groupselect($event)">
             <li *ngFor="let groups of usergroups; index as i">
-                {{usergroups[i]}}
+                {{usergroups[i].name}}
             </li>
         </ul>
+        <div *ngIf="admin == true">
+            <form>
+                <label for="nusername">New Group Name:</label>
+                <input type="text" [(ngModel)]="newgroup.name" name="groupname"><br>
+            </form>
+
+        </div>
     </div>
 
     <div id="bottombar">
-        <button (click)="home()" id="home" >Groups</button>
+        <button *ngIf="admin == false" (click)="home()" id="home">Groups </button>
+        <button *ngIf="admin == true" (click)="createGroup()" id="home">New Group</button>
         <button (click)="profile()" id="profile" >Profile</button>
     </div>
 </body>
