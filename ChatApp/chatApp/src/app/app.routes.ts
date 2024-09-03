@@ -8,7 +8,6 @@ import { ChannelsComponent } from '../channels/channels.component';
 import { ChatsComponent } from '../chats/chats.component';
 
 export const routes: Routes = [
-    //{path: '', component:WelcomeComponent},
     {path: 'profile', component:ProfileComponent},
     {path: '', component:LoginComponent},
     {path: 'home', component:HomeComponent},
