@@ -31,7 +31,7 @@
         </ul>
     </div>
 
-    <div id="deletebutton">
+    <div *ngIf="admin == true" id="deletebutton">
         <button (click)="EngageDelete()">Edit Groups</button>
     </div>
     <div id="bottombar">
