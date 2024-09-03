@@ -19,8 +19,20 @@
                 <label for="nChanlle">New Group Name:</label>
                 <input type="text" [(ngModel)]="nChannel" name="nChanlle"><br>
             </form><button (click)="createChannel()">New Channel</button>
+        </div>
     </div>
-</div>
+
+    <div *ngIf="delete == true" id="div2">
+        <ul (click)="deleteChannel($event)">
+            <li *ngFor="let channels of channels; index as i">
+                {{channels}}
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="admin == true" id="deletebutton">
+        <button (click)="EngageDelete()">Edit Channels</button>
+    </div>
 
     <div id="bottombar">
         <button (click)="home()" id="home" >Groups</button>
