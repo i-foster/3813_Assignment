@@ -33,23 +33,24 @@
         <div *ngIf="makingUser == true">
 
             <form action="GET">
-                <label for="nusername">New User Username:</label>
-                <input type="text" id="nusername" name="nusername" [(ngModel)]="newuser.username" value="{{newuser.username}}"><br>
+            <label for="nusername">New User Username:</label>
+            <input type="text" id="nusername" name="nusername" [(ngModel)]="newuser.username" value="{{newuser.username}}"><br>
                
             <label for="npassword">New User Password:</label>
             <input type="text" id="npassword" name="npassword" [(ngModel)]="newuser.password" value="{{newuser.password}}"><br>
             
             <label for="nlevel">New User Rank:</label>
             <input type="text" id="nlevel" name="nlevel" [(ngModel)]="newuser.Level" value="{{newuser.Level}}"><br>
-                </form>
+            </form>
             <button  (click)="generateUser()">Generate User.</button>
         </div>
     </div>
 
 
+
     <div id="bottombar">
         <button (click)="home()" id="home" >Groups</button>
-        <button (click)="profile()" id="profile" >Profile</button>
+        <button (click)="logOut()" id="profile" >Log out</button>
     </div>
 </body>
 </html>

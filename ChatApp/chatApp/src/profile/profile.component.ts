@@ -61,9 +61,7 @@ export class ProfileComponent {
     home(){
       this.router.navigateByUrl("home");
     }
-    profile(){
-      this.router.navigateByUrl("profile")
-    }
+
     createUser(){
       this.makingUser = true;
       this.counterCheck();
@@ -91,6 +89,8 @@ export class ProfileComponent {
         this.newuser.id = this.counterCheck();
         localStorage.setItem("newuser" + this.newuser.id,JSON.stringify(this.newuser))
       }
-
+    }
+    logOut(){
+      localStorage.clear();
     }
   }
