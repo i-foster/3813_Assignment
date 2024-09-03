@@ -21,9 +21,18 @@ export class ProfileComponent {
     }
 
     userStat = false;
+    makingUser = false;
+    
+    newuser = {
+    "username":"",
+    "password":"",
+    "id":0,
+    "Level":""
+    }
 
     currentUser={
       "username":"",
+      "id":0,
       "birthdate":"",
       "age":0,
       "email":"",
@@ -56,6 +65,32 @@ export class ProfileComponent {
       this.router.navigateByUrl("profile")
     }
     createUser(){
+      this.makingUser = true;
+      this.counterCheck();
+    }
+
+    counterCheck(){
+      if(localStorage.getItem("usercounter") != null)
+        {
+          let currentcounter:any = localStorage.getItem("usercounter");
+          currentcounter = JSON.parse(currentcounter)
+          currentcounter += 1;
+          this.storage.saveData("usercounter",currentcounter);
+          let returnValue:number = currentcounter
+          return (returnValue);}
+          else(localStorage.getItem("usercounter")==null)
+          {
+            this.storage.saveData("usercounter","5");
+            let returnValue = 5
+            return (returnValue);
+          }
+    }
+    generateUser(){
+      if(this.newuser.username != null && this.newuser.password != null && this.newuser.Level != null){
+        this.userStat = true;
+        this.newuser.id = this.counterCheck();
+        localStorage.setItem("newuser" + this.newuser.id,JSON.stringify(this.newuser))
+      }
 
     }
   }

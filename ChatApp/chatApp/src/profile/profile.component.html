@@ -27,8 +27,23 @@
 
         </form>
         <button (click)="saveData()">Save</button>
-        <div><button *ngIf="userStat == true" (click)="createUser()">Create New User   
+        <div><button *ngIf="userStat == true" (click)="createUser()">Create New User  
         </button></div>
+
+        <div *ngIf="makingUser == true">
+
+            <form action="GET">
+                <label for="nusername">New User Username:</label>
+                <input type="text" id="nusername" name="nusername" [(ngModel)]="newuser.username" value="{{newuser.username}}"><br>
+               
+            <label for="npassword">New User Password:</label>
+            <input type="text" id="npassword" name="npassword" [(ngModel)]="newuser.password" value="{{newuser.password}}"><br>
+            
+            <label for="nlevel">New User Rank:</label>
+            <input type="text" id="nlevel" name="nlevel" [(ngModel)]="newuser.Level" value="{{newuser.Level}}"><br>
+                </form>
+            <button  (click)="generateUser()">Generate User.</button>
+        </div>
     </div>
 
 

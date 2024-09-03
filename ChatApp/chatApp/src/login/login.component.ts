@@ -23,6 +23,7 @@ export class LoginComponent {
 
   details = [
     {"username":"izaiah",
+    "id":2,
     "birthdate":"1/01/2000",
     "age":27,
     "email":"i@com",
@@ -31,6 +32,7 @@ export class LoginComponent {
     "level":"super"
 },
 {"username":"kaile",
+    "id":3,
     "birthdate":"1/01/2000",
     "age":28,
     "email":"z@com",
@@ -39,6 +41,7 @@ export class LoginComponent {
     "level":"group"
 },
 {"username":"super",
+  "id":1,
   "birthdate":"1/01/2000",
   "age":28,
   "email":"z@com",
@@ -47,6 +50,7 @@ export class LoginComponent {
   "level":"super"
 },
 {"username":"newuser",
+  "id":4,
   "birthdate":"1/01/2000",
   "age":24,
   "email":"a@com",
