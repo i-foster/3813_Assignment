@@ -21,23 +21,23 @@ Users: Users are structured with the following data storage design.: any items w
     * valid: to ensure a user is still current.
     * level: current rank or level of a user, can be a user , group admin or a super admin.
 
-Groups:
-Groups are structured with the following data points of: Groups are stored in a object or array of objects and  with each point being stored as a string.
-    name: the name of the group 
-    owner: the owner of the group
-    channels: channels within the group stored as a array of strings.
-    users: array of strings of all users who can be in the group.
+Groups:\
+Groups are structured with the following data points of: Groups are stored in a object or array of objects and  with each point being stored as a string.\
+    name: the name of the group. \
+    owner: the owner of the group. \
+    channels: channels within the group stored as a array of strings. \
+    users: array of strings of all users who can be in the group. \
 
-Channels: 
-Channels store their own name and the chat messages currently this will be changed to the channel name and the location of those stored messages.
+Channels:\
+Channels store their own name and the chat messages currently this will be changed to the channel name and the location of those stored messages.\
 
-Chats:
-Chats are user generated content of string typing, currently only example chats are hardcoded into a array of strings, however when MongoDB is added they will have the following data structure.
-    Chatcontent: The chat messages.
-    Owner: the user that sent the message.
+Chats:\
+Chats are user generated content of string typing, currently only example chats are hardcoded into a array of strings, however when MongoDB is added they will have the following data structure.\
+    Chatcontent: The chat messages.\
+    Owner: the user that sent the message.\
 
 
-Angular components:
+Angular Design:
 
 
 GIT:
