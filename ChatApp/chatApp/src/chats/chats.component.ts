@@ -54,10 +54,11 @@ export class ChatsComponent {
     if(localStorage.getItem("group") == null || localStorage.getItem("channel") == null ){
       this.router.navigateByUrl("home");
   }else {
-    let currentGroup:string = this.stringCleaner(localStorage.getItem("group"));
+    let currentGroup:any = localStorage.getItem("group");
     let currentChannel:string = this.stringCleaner(localStorage.getItem("channel"));
+    currentGroup = JSON.parse(currentGroup)
     for (let i = 0; i < messages.length; i++){
-      if(currentGroup == messages[i].group && currentChannel == messages[i].chanel){
+      if(currentGroup.name == messages[i].group && currentChannel == messages[i].chanel){
         this.displayName = currentGroup + "/" + currentChannel;
         this
         if(newmessage != null ){
