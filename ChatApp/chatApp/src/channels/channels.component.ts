@@ -14,9 +14,10 @@ import { FormsModule } from '@angular/forms';
 export class ChannelsComponent {
   constructor(private router:Router, private localstore:LogonService){ }
 
-
+  delete = false;
   admin = false;
   channels =[""];  
+  deleteClicked:string = "";
   currentGroupDetails = {
     name:"",
     owner:""
@@ -93,6 +94,25 @@ ngOnInit():void {
     this.router.navigateByUrl("profile")
   }
 
+  EngageDelete(){
+    if(this.delete == false ){
+    this.delete = true;}
+    else{this.delete = false}
+  }
 
-
+  deleteChannel(itemclicked:any){
+    //this currently does not work due to the design of hard coded values will work with the implementation of MongoDB
+    this.deleteClicked =  itemclicked.target.innerHTML;
+    /*for(let i=0; i < this.usergroups.length; i++){
+      this.deleteClicked = this.stringCleaner(this.deleteClicked)
+      if(this.deleteClicked == this.usergroups[i].name){
+        for(let j = 0; j <= this.usergroups.length; j++){
+          if(j != i){
+          this.newG.push(this.usergroups[j])
+          } 
+        }
+      }
+    }
+    this.usergroups = this.newG;
+    */}
 }
