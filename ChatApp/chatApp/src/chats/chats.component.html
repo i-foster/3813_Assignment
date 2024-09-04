@@ -7,17 +7,19 @@
 </head>
 <body>
 
-    <div><span id="messagearea">
-        <h2>{{displayName}}</h2>
+    <div>
+        <h2 id="header">{{displayName}}</h2>
         <ul>
-            <li *ngFor="let messages of chats; index as i">
+            <li  *ngFor="let messages of chats; index as i">
                 <div *ngIf="i%2 == 1" class="mright" >{{chats[i]}}</div>
                 <div *ngIf="i%2 == 0" class="mleft" >{{chats[i]}}</div>
             </li>
         </ul>
-    </span></div>
+    </div>
 
-    <button (click)="newMessage()" id="test">New message</button>
+
+        <input id="message" type="text" [(ngModel)]="message" (keydown.enter)="newMessage()">
+
 
     <div id="bottombar">
         <button (click)="home()" id="home" >Groups</button>
