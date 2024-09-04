@@ -1,0 +1,75 @@
+#location{
+text-align: center;
+text-transform: capitalize;
+color: #260F26;
+}
+
+li{
+    list-style: none;
+    margin: 1em;
+    margin-left: auto;
+    background-color: #260F26;
+    text-align: center;
+    text-justify: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #86CB92;
+    text-decoration: solid;
+    font-size: x-large;
+    text-transform: capitalize;
+    border-radius: 9px;
+}
+
+::placeholder{
+    color: #260F26;
+    opacity: 3;
+    font-size: larger;
+}
+
+#newChannel{
+    text-align: center;
+    position: absolute; 
+    bottom: 6em; 
+    width: 49%;
+}
+
+#channelName{
+    margin-left: 2.5%;
+    width: 90%;
+    text-align: center;
+    height: 1.5em;
+    border-radius: 9px;
+    background-color: #71B48D;
+}
+
+#channelButton{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 2.5%;
+    width: 90%;
+    text-align: center;
+    height: em;
+    font-weight: 500;
+    border-radius: 9px;
+    background-color: #71B48D;
+}
+
+#deletebutton{
+    text-align: center;
+    position: absolute; 
+    bottom: 6em; 
+    width: 49%;
+    left: 50%;
+}
+
+#editbutton{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 2.5%;
+    width: 90%;
+    text-align: center;
+    height: em;
+    font-weight: 500;
+    border-radius: 9px;
+    background-color: #71B48D;
+}

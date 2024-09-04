@@ -63,8 +63,12 @@ export class ProfileComponent {
     }
 
     createUser(){
+      if(this.makingUser == false){
       this.makingUser = true;
       this.counterCheck();
+      } else if(this.makingUser == true){
+        this.makingUser = false
+      }
     }
 
     counterCheck(){

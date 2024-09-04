@@ -1,24 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-#home{
-    background-color: red;
-    width: 50%; height: 5em; 
-}
-
 
 #bottombar{
+border-top-width: 7px;
 margin-left: 0%; 
 padding-left: 0%;  
 width: 100%; 
 position: absolute; 
 bottom: 0; 
-left: 0;}
+left: 0;
+}
 
 #profile{
+    background-color: #86CB92;
     width: 50%; height: 5em; 
+    border: 3px #404E7C;
+    border-left-width: 1em ;
+}
+
+#home{
+    background-color: #86CB92;
+    width: 50%; height: 5em; 
+    border: 3px #404E7C;
+    border-left-width: 1em ;
 }
 
 html, body{
     padding: 0%;
     margin: 0%;
+    background-image: linear-gradient(#71B48D,#251F47);
+    height: 100%;
 }
 

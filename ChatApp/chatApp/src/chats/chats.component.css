@@ -14,25 +14,36 @@ li{
 .mright{ 
     clear: right; 
     float: right; 
-    text-align: left;
     margin: 1em;
+    margin-left: 70%;
     position: relative;
     width: 8em;
-    height: auto;
-    background-color: lemonchiffon;    
-    text-align: right;
+    height: auto;  
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-indent: 1em;
 }
 
 .mleft{ 
     float: left; 
     clear: left; 
-    text-align: left;
     margin: 1em;
+    margin-right: 70%;
+    margin-left: 0%;
     position: relative;
     width: 8em;
-    height: auto;
-    background-color: lemonchiffon;    
+    height: auto; 
     text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-indent: 1em;
 }
 body {
     background-color: grey;
@@ -43,4 +54,30 @@ body {
 }
 h2{
     text-align: center;
+}
+
+#header{
+    text-transform: capitalize;
+}
+
+#newarea{
+    text-align: center;
+    align-items: center;
+    position: absolute; 
+    bottom: 6em; 
+    left: 1px;
+    width: 100%;
+}
+
+
+#message{
+    text-align: left;
+    align-self: center;
+    position: absolute; 
+    left: 5%;
+    bottom: 7em;
+    margin: 0;
+    width: 90%;
+    padding: 0;
+
 }

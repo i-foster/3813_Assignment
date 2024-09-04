@@ -48,6 +48,7 @@ This app is using the Angular framework. Here is a detailed breakdown of each co
 - `Home`: The default page for a signed-in user. It provides access to each group the user can see and their profile. If the user is a group admin or super admin, this is where they can create new groups.
 - `Channels`: Displays channels for the group the user is currently in. If the user is a group admin or super admin, this is where they can create new channels.
 - `Profile`: Displays all user details. All users can sign out from this page. It is also where super admins can create new user accounts.
+- `Chats`: Display each chanel chat messages, if super admin or group admin will be where they can click on a user to remove them from the channel/group
 
 ### GIT
 Git was used to regularly back up and commit new work. Merges had to be manually approved, and branches were used after the first working version for CSS and small changes, allowing a rollback in case of failure. My Git repository mirrors an Angular project with some minor adjustments:

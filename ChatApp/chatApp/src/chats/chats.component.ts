@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LogonService } from '../app/services/logon.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-chats',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './chats.component.html',
   styleUrl: './chats.component.css'
 })
@@ -18,6 +19,7 @@ export class ChatsComponent {
   chats=[""];
   displayName:string ="";
   displayChannel:string = "";
+  message:string = "";
 
   ngOnInit():void {
     this.populateMessages()
@@ -59,7 +61,7 @@ export class ChatsComponent {
     currentGroup = JSON.parse(currentGroup)
     for (let i = 0; i < messages.length; i++){
       if(currentGroup.name == messages[i].group && currentChannel == messages[i].chanel){
-        this.displayName = currentGroup + "/" + currentChannel;
+        this.displayName = currentGroup.name + " / " + currentChannel;
         this
         if(newmessage != null ){
           messages[i].messages.push(newmessage)
@@ -72,7 +74,7 @@ export class ChatsComponent {
   newMessage(){
     //test function to generate a new message to be displayed 
     //Removal in a2 when socket.io is added and message function fully implemeneted 
-    this.populateMessages("New message")
+    this.populateMessages(this.message)
   }
 
   home(){
