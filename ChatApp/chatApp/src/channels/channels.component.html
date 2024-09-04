@@ -6,7 +6,7 @@
     <title>Channels</title>
 </head>
 <body>
-    <div><h1>hello</h1></div>
+    <div id="location"><h1>{{currentGroupDetails.name}}</h1></div>
 
     <div>
         <ul (click)="channelselect($event)">
@@ -14,12 +14,14 @@
                 {{channels}}
             </li>
         </ul>
+
         <div *ngIf="admin == true">
-            <form>
-                <label for="nChanlle">New Group Name:</label>
-                <input type="text" [(ngModel)]="nChannel" name="nChanlle"><br>
-            </form><button (click)="createChannel()">New Channel</button>
+            <form id="newChannel">
+                <input id="channelName" type="text" [(ngModel)]="nChannel" name="nChanlle" placeholder="New Channel Name"><br>
+                <button id="channelButton" (click)="createChannel()">New Channel</button>
+            </form>
         </div>
+
     </div>
 
     <div *ngIf="delete == true" id="div2">
@@ -31,7 +33,7 @@
     </div>
 
     <div *ngIf="admin == true" id="deletebutton">
-        <button (click)="EngageDelete()">Edit Channels</button>
+        <button id="editbutton" (click)="EngageDelete()">Edit Channels</button>
     </div>
 
     <div id="bottombar">

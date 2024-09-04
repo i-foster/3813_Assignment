@@ -31,7 +31,7 @@ export class ChannelsComponent {
     "valid":false,
     "level":""
 };
-nChannel:string="+" 
+nChannel:string="" 
 
 ngOnInit():void {
   this.adminstat()
