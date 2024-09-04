@@ -1,0 +1,30 @@
+#welcome{
+    text-align: center;
+    align-self: center;
+}
+
+#login{
+    height: 25vh;
+    text-align: justify;
+    text-align: center;
+    align-self: center;
+
+}
+
+h2{
+    padding-top: 10vh;
+}
+
+input{
+    margin-top: 5px;
+    text-align: center;
+}
+button{
+    background-color: #86CB92;
+    margin-top: 15px;
+    font-size: x-large;
+    border-radius: 7px;
+    width: 50%;
+
+
+}

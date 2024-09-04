@@ -15,9 +15,8 @@
             </li>
         </ul>
         <div *ngIf="admin == true">
-            <form>
-                <label for="nusername">New Group Name:</label>
-                <input type="text" [(ngModel)]="newgroup.name" name="groupname"><br>
+            <form id="ngroup">
+                <input id="groupInput" type="text" [(ngModel)]="newgroup.name" name="groupname" placeholder="New Group Name"><br>
             </form>
 
         </div>
@@ -32,7 +31,7 @@
     </div>
 
     <div *ngIf="admin == true" id="deletebutton">
-        <button (click)="EngageDelete()">Edit Groups</button>
+        <button id="editButton" (click)="EngageDelete()">Edit Groups</button>
     </div>
     <div id="bottombar">
         <button *ngIf="admin == false" (click)="home()" id="home">Groups </button>

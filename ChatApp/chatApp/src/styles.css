@@ -4,7 +4,6 @@
     width: 50%; height: 5em; 
 }
 
-
 #bottombar{
 margin-left: 0%; 
 padding-left: 0%;  
@@ -20,5 +19,7 @@ left: 0;}
 html, body{
     padding: 0%;
     margin: 0%;
+    background-image: linear-gradient(#71B48D,#251F47);
+    height: 100%;
 }
 
