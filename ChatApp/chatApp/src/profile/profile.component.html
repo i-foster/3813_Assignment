@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="UserDetails">
+    <h1>Profile</h1>
+    <div id="UserDetails" *ngIf="makingUser == false">
 
         <form action="GET">
-
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" [(ngModel)]="currentUser.username" value="{{currentUser.username}}"><br>
             
@@ -22,30 +22,32 @@
             <label for="password">Password:</label>
             <input type="text" id="password" name="password" [(ngModel)]="currentUser.password" value="{{currentUser.password}}"><br>
             
-            <label for="level">Rank</label>
-            <input type="text" id="level" name="level" value="{{currentUser.level}}"><br>
-
+            <label for="level">Rank:</label>
+            <input type="text" id="level" name="level" value="{{currentUser.level}}" disabled><br>
+            <button class="profileButtons" (click)="saveData()">Save</button>
         </form>
-        <button (click)="saveData()">Save</button>
-        <div><button *ngIf="userStat == true" (click)="createUser()">Create New User  
-        </button></div>
-
-        <div *ngIf="makingUser == true">
-
-            <form action="GET">
-            <label for="nusername">New User Username:</label>
-            <input type="text" id="nusername" name="nusername" [(ngModel)]="newuser.username" value="{{newuser.username}}"><br>
-               
-            <label for="npassword">New User Password:</label>
-            <input type="text" id="npassword" name="npassword" [(ngModel)]="newuser.password" value="{{newuser.password}}"><br>
-            
-            <label for="nlevel">New User Rank:</label>
-            <input type="text" id="nlevel" name="nlevel" [(ngModel)]="newuser.Level" value="{{newuser.Level}}"><br>
-            </form>
-            <button  (click)="generateUser()">Generate User.</button>
         </div>
-    </div>
-
+       
+        <div>
+            <button id="newuserButton" class="profileButtons" *ngIf="userStat == true && makingUser ==false" (click)="createUser()">Create New User</button>
+            <div id="makingUser" *ngIf="makingUser == true">
+                <form action="GET">
+                <label for="nusername">New User Username:</label>
+                <input type="text" id="nusername" name="nusername" [(ngModel)]="newuser.username" value="{{newuser.username}}"><br>
+                
+                <label for="npassword">New User Password:</label>
+                <input type="text" id="npassword" name="npassword" [(ngModel)]="newuser.password" value="{{newuser.password}}"><br>
+                
+                <label for="nlevel">New User Rank:</label>
+                <input type="text" id="nlevel" name="nlevel" [(ngModel)]="newuser.Level" value="{{newuser.Level}}" ><br>
+                <button style="width: 100%;" generatingButtons class="profileButtons" (click)="generateUser()">Generate User</button>
+                </form>
+                
+                <div *ngIf="makingUser == true">
+                    <button id="cancelButton" class="profileButtons" (click)="createUser()" >Cancel</button>
+                </div>
+            </div>
+        </div>
 
 
     <div id="bottombar">
