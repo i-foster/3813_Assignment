@@ -51,6 +51,7 @@ This app is using the Angular framework. Here is a detailed breakdown of each co
 #### Services
 - `Logon Service`: Used to access local storage with methods for getting, setting, and clearing values.
 - `Socket Service`: Used for chat component to send and receive messages in channels.
+- `String Cleaning Service`: Used for user inputs to ensure they are simple strings to remove risk of users entering unexpected values
 
 
 #### Components
@@ -76,3 +77,7 @@ The routes used are as below. The default is the only route accessible when not 
 - `profile`
 - `channels`
 - `chats` 
+
+
+### Validation 
+there is string cleaning service to clean values to remove unexepected inputs by a user. the login function uses strict typing to ensure only strings can be entered for username and password. user
