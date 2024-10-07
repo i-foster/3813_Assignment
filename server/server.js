@@ -1,90 +1,42 @@
-var express = require('express');
-const { request } = require('http');
-var cors = require('cors')
-var app = express();
+// server/index.js
+const express = require("express");
+const http = require("http");
+const socketIo = require("socket.io");
+const cors = require("cors");
 
+const app = express();
+const port = 3000;
 
-
-
-app.use(bodyParer.json());
-app.use(express.static(path.join(__dirname, '../dist/week4tut')));
+// Enable CORS for all requests
 app.use(cors());
 
+// Define a route handler for the root path
+app.get("/", (req, res) => {
+  res.send("Hello, world!");
+});
 
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '../index.html');
-    });
+// Create the HTTP server and attach the Express app to it
+const server = http.createServer(app);
+const io = socketIo(server, {
+  cors: {
+    origin: "*",
+  },
+});
 
-    var express = require('express');
-    const { request } = require('http');
-    var cors = require('cors')
-    var app = express();
-    
-    const path = require('path');
-    const http = require('http').Server(app);
-    const bodyParer = require('body-parser');
-    
-    
-    
-    app.use(bodyParer.json());
-    app.use(express.static(path.join(__dirname, '../dist/week4tut')));
-    app.use(cors());
-    
-    
-    app.get('/', function (req, res) {
-        res.sendFile(__dirname + '../index.html');
-        });
-    
-    app.post('/api/auth', function(req, res) {
-    
-        let details = [
-            {"username":"i",
-            "birthdate":"1/01/2000",
-            "age":24,
-            "email":"i@com",
-            "password":"i",
-            "valid":false
-        },
-        {"username":"z",
-            "birthdate":"1/01/2000",
-            "age":24,
-            "email":"z@com",
-            "password":"z",
-            "valid":false
-        },
-        {"username":"a",
-            "birthdate":"1/01/2000",
-            "age":24,
-            "email":"a@com",
-            "password":"a",
-            "valid":false
-        }
-        ];
-    
-        if (!req.body) {
-            return res.sendStatus(400);
-        }
-    
-        var user = {};
-        user.email = req.body.email;
-        user.password = req.body.password;
-        user.valid = false;
-    
-        for(let i = 0; i < details.length; i++){
-            if (user.username == details[i].username && user.password == details[i].password ) {
-                console.log("Valid user")        
-                details[i].valid = true;
-            }else{
-                console.log("username or password does not match")
-                details[i].valid = false;
-            }
-        }})
-    
-    
-        let server = http.listen(3000, function(){ 
-            let host = server.address().address;
-            let port = server.address().port;
-            console.log("server listerning on: " + host + 
-                "port: " + port)
-        })
-        
+io.on("connection", (socket) => {
+  console.log("New client connected");
+
+  socket.on("message", (data) => {
+    console.log("Received message:", data);
+    io.emit("message", data); // Broadcasting the message
+  });
+
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+  });
+});
+
+// Start the server
+server.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});

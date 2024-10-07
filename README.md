@@ -32,6 +32,14 @@ Groups are structured with the following data points. Groups are stored in an ob
 #### Channels
 Channels store their own name and chat messages. Currently, this will be changed to include the channel name and the location of the stored messages.
 
+
+Groups are structured with the following data points. Groups are stored in an object or array of objects, with each point being stored as a string.
+- `name`: the name of the channel
+- `group`: the group the channel is apart of
+- `users`:  all users who can be in the group
+- `messages`:  messages within the channel
+
+
 #### Chats
 Chats are user-generated content of string typing. Currently, only example chats are hardcoded into an array of strings. When MongoDB is added, they will have the following data structure:
 - `ChatContent`: the chat messages
@@ -42,6 +50,8 @@ This app is using the Angular framework. Here is a detailed breakdown of each co
 
 #### Services
 - `Logon Service`: Used to access local storage with methods for getting, setting, and clearing values.
+- `Socket Service`: Used for chat component to send and receive messages in channels.
+
 
 #### Components
 - `Logon`: Acts as a splash page for the app where users are authenticated and redirected if they sign out.
@@ -56,4 +66,13 @@ Git was used to regularly back up and commit new work. Merges had to be manually
 - `images` folder containing early drafts of wireframes and data structures
 
 ### Server Side
-Everything is handled client-side currently, as there is no database authentication or editing. This will be implemented in A2.
+there is a mix of server and client side. server side is implemented using socket.io for messaging, the plan is to implement mongoDB for server side data storage but currently this is not working due to machine limitations.
+
+### Routes Rest API 
+The routes used are as below. The default is the only route accessible when not logged in. It does not have a parameter in implementation, but for documentation, it is referred to as default. All routes excluding the default return the user login data and current location.
+
+- `default`
+- `home`
+- `profile`
+- `channels`
+- `chats` 
