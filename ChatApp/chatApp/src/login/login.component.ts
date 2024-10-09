@@ -61,8 +61,8 @@ export class LoginComponent {
 
 
   formsubmit(){
-
-    //sample user data for a1 a2 will implement checks agaainst database 
+    //sample user data 
+    
     type user = {
       username:string;
       password:string;

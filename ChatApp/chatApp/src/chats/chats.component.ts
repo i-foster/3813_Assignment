@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { LogonService } from '../app/services/logon.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SocketService } from "../app/services/socket.service"
 
 
 @Component({
@@ -12,16 +15,24 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './chats.component.html',
   styleUrl: './chats.component.css'
 })
-export class ChatsComponent {
-
-  constructor (private router:Router, private localstore:LogonService){}
-
-  chats=[""];
+export class ChatsComponent implements OnDestroy { 
+  private messageSubscription: Subscription;
+  chats: string[] = [];
   displayName:string ="";
   displayChannel:string = "";
   message:string = "";
 
+  constructor (private router:Router, private localstore:LogonService, 
+    private socketService: SocketService){ 
+      this.messageSubscription = this.socketService
+      .on('message')
+      .subscribe((data) => {
+        this.chats.push(data.text);
+      });
+    }
+
   ngOnInit():void {
+    
     this.populateMessages()
     
     }
@@ -32,6 +43,7 @@ export class ChatsComponent {
   }
 
   populateMessages(newmessage?:any){
+    //function to populate previous messages in chat channel
     type chatmessages = {
       group:string;
       chanel:string;
@@ -71,12 +83,18 @@ export class ChatsComponent {
   }
 }
 
+
+//functions for message sending a new messge via sockets and unsubscribing.
   newMessage(){
-    //test function to generate a new message to be displayed 
-    //Removal in a2 when socket.io is added and message function fully implemeneted 
-    this.populateMessages(this.message)
+      console.log(this.message)
+      this.socketService.emit('message', { text: this.message });
+      this.message = '';
+  }
+  ngOnDestroy() {
+    this.messageSubscription.unsubscribe();
   }
 
+  //function for navigating 
   home(){
     this.router.navigateByUrl("home");
   }
