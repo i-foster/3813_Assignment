@@ -80,4 +80,4 @@ The routes used are as below. The default is the only route accessible when not 
 
 
 ### Validation 
-there is string cleaning service to clean values to remove unexepected inputs by a user. the login function uses strict typing to ensure only strings can be entered for username and password. user
+there is string cleaning service to clean values to remove unexepected inputs by a user. the login function uses strict typing to ensure only strings can be entered for username and password. 
